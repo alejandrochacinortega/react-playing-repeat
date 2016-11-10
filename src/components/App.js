@@ -3,7 +3,8 @@ import Header from './Header';
 import Result from './Result';
 import AddButton from './AddButton';
 import ButtonsList from './ButtonsList';
-
+import AddGithubAccount from './AddGithubAccount';
+import Card from './Card';
 
 import {observer} from 'mobx-react';
 
@@ -19,6 +20,9 @@ class App extends React.Component {
         <AddButton/>
         <ButtonsList/>
         <hr/>
+        <Header title="Github"/>
+        <AddGithubAccount />
+        <Card />
       </div>
     )
   }

@@ -7,9 +7,7 @@ import {observer} from 'mobx-react';
 class Result extends React.Component {
   render() {
     return (
-      <div>
-        <span>{CounterStore.value}</span>
-      </div>
+      <span>{CounterStore.value}</span>
     )
   }
 }
