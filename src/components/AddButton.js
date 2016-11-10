@@ -10,7 +10,8 @@ class AddButton extends React.Component {
   @observable amount = '';
 
   addButton() {
-    CounterStore.addButton(this.amount)
+    CounterStore.addButton(parseInt(this.amount));
+    this.amount = "";
   }
 
   onChange(event) {
@@ -21,7 +22,7 @@ class AddButton extends React.Component {
     return (
       <div>
         <input
-          type="text"
+          type="number"
           placeholder="Add amount"
           value={this.amount}
           onChange={this.onChange.bind(this)}
