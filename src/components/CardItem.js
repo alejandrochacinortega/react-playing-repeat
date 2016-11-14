@@ -4,11 +4,29 @@ import {observer} from 'mobx-react';
 @observer
 class CardItem extends React.Component {
   render() {
-    console.log('this.props. ', this.props.profile);
+    let taskStyle = {
+      width: "50px",
+      height: "50px"
+    };
+
+    let margin = {
+      marginLeft: "10px"
+    };
+
     return (
-      <div>
-        <p>Hey {this.props.profile.name}</p>
-      </div>
+        <tbody>
+          <tr>
+           <td>
+             <img style={taskStyle} src={this.props.profile.avatar_url} alt=""/>
+           </td>
+            <td>
+              <p style={margin}>{this.props.profile.name}</p>
+            </td>
+            <td>
+              <p style={margin}>{this.props.profile.login}</p>
+            </td>
+          </tr>
+        </tbody>
     )
   }
 }

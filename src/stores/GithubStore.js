@@ -28,9 +28,17 @@ class GithubStore {
   }
 
   @action
-  addAccount(name) {
+  async addAccount(name) {
     console.log('name ', name);
-    // profiles.push(new GithubModel(n))
+    let response = await fetch(`https://api.github.com/users/${name}`);
+    console.log('response ', response);
+    let profile = await response.json();
+    console.log('profile ', profile);
+    if (profile.message) {
+      //error
+      throw Error(profile.message)
+    }
+    this.profiles.push(new GithubModel(profile))
   }
 
 }

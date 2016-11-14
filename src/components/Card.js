@@ -9,9 +9,17 @@ class Card extends React.Component {
   render() {
     let profiles = GithubStore.profiles;
     return (
-      <div>
+
+      <table>
+        <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Username</th>
+        </tr>
+        </thead>
         {profiles.map((profile, index) => <CardItem key={index} profile={profile}/>)}
-      </div>
+      </table>
     )
   }
 }
