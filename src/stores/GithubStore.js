@@ -1,5 +1,8 @@
 import {observable, action} from 'mobx';
 import GithubModel from '../models/githubModel';
+import _ from 'lodash';
+
+console.log('_ ', _);
 
 
 var PROFILES = [
@@ -39,6 +42,13 @@ class GithubStore {
       throw Error(profile.message)
     }
     this.profiles.push(new GithubModel(profile))
+  }
+
+  @action
+  deleteAccount(username) {
+    console.log('profile ', username);
+    console.log('profiles ', this.profiles);
+    _.remove(this.profiles, profile => profile.login == username)
   }
 
 }
